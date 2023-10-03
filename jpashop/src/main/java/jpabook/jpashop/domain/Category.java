@@ -30,7 +30,7 @@ public class Category {
     @JoinColumn(name = "parent_id")
     private Category parent;
 
-    @OneToMany(mappedBy = "prent")
+    @OneToMany(mappedBy = "parent")
     private List<Category> child = new ArrayList<>();
 
     //연관관계 메서드
