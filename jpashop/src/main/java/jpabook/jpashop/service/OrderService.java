@@ -34,10 +34,10 @@ public class OrderService {
         delivery.setAddress(member.getAddress());
 
         //주문상품 생성
-        OrderItem orderItem = OrderItem.creatOrderItem(item, item.getPrice(), count);
+        OrderItem orderItem = OrderItem.createOrderItem(item, item.getPrice(), count);
 
         //주문 생성
-        Order order = Order.creatOrder(member, delivery, orderItem);
+        Order order = Order.createOrder(member, delivery, orderItem);
         // 10월 7일
         //++ 추가 공유 자리
 
@@ -61,8 +61,8 @@ public class OrderService {
         //JPa의 변경내역 감지에 의해서 Entity의 바뀐 필드값을 읽어 update query가 날라간다.
     }
 
-   /* //검색
-    public List<Order> findOrders(OrderSearch orderSearch) { return orderRepository.findAllByStri(orderSearch);}*/
+   /* //검색*/
+    public List<Order> findOrders(OrderSearch orderSearch) { return orderRepository.findAllByString(orderSearch);}
 
 
     //주문 서비스 + 주문 + 주문 최소 메서드

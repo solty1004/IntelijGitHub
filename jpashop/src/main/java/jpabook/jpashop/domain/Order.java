@@ -64,7 +64,7 @@ public class Order {
     }
 
     // 생성 메서드
-    public static Order creatOrder(Member member, Delivery delivery, OrderItem... orderItems) {
+    public static Order createOrder(Member member, Delivery delivery, OrderItem... orderItems) {
         Order order = new Order();
         order.setMember(member);
         order.setDelivery(delivery);
@@ -85,7 +85,7 @@ public class Order {
         if( delivery.getStatus() == DeliveryStatus.COMP) {
             throw new IllegalStateException("이미 배송 완료된 상품은 취소가 불가함");
         }
-        this.setStatus(OrderStatus.CANCLE);
+        this.setStatus(OrderStatus.CANCEL);
         for( OrderItem orderItem : orderItems) {
             orderItem.cancel();
         }
@@ -102,11 +102,6 @@ public class Order {
         }
         return totalPrice;
     }
-
-
-
-
-
 
 
 

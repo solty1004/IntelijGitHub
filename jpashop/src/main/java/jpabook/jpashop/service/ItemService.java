@@ -29,7 +29,6 @@ public class ItemService {
         findItem.setName(name);
         findItem.setStockQuantity(stockQuantity);
 
-
         //실제 비지니스 로직에서는 하나하나  set 하지 말고 Update method를 만들어야함.
     }
 
